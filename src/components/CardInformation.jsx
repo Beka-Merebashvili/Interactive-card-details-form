@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import StyledButton from "../styled-components/StyledButton";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import InputMask from 'react-input-mask';
@@ -20,44 +21,44 @@ export default function CardInformation(props) {
       <div className="inputWrapper">
         <label htmlFor="">Cardholder Name</label>
         <input type="text" className="input CardholderInput" placeholder="e.g. Jane Appleseed"
-         {...register ("name" , {required: "Cant be blank" })} />
-         {errors.name && <p>{errors.name.message}</p>}
+         {...register ("name" , {required: "Can't be blank" })} />
+         {errors.name && <p className="errorMessage">{errors.name.message}</p>}
       </div>
       <div className="inputWrapper">
         <label htmlFor="">Card Number</label>
         <InputMask mask="9999 9999 9999 9999" maskChar={null} type="text" className="input numberInput" placeholder="e.g. 1234 5678 9123 0000" 
-         {...register ("number" ,  {required: "Cant be blank" , minLength : {
+         {...register ("number" ,  {required: "Can't be blank" , minLength : {
                     value: 16 ,
                     message: "wrong format"
                 } })} />
-         {errors.number && <p>{errors.number.message}</p>}
+         {errors.number && <p className="errorMessage">{errors.number.message}</p>}
       </div>
       <div className="cardInfo">
         <div className="date inputWrapper">
             <label htmlFor="">Exp. Date (MM/YY)</label>
             <div className="dateInputs">
             <InputMask className="InputMaskMonth" mask="99" maskChar={null} type="text" placeholder="MM"
-            {...register ("month" , { required: "Cant be blank" , maxLength : {
+            {...register ("month" , { required: "Can't be blank" , maxLength : {
                     value: 2 ,
                 }} )} />
             <InputMask className="InputMaskYear" mask="99" maskChar={null} type="text" placeholder="YY" 
-            {...register ("year" , { required: "Cant be blank" , maxLength : {
+            {...register ("year" , { required: "Can't be blank" , maxLength : {
                     value: 2 ,
                 }} )} />      
             </div>
-            {errors.year || errors.month ? <p>Cant be blank</p> : null }
+            {errors.year || errors.month ? <p className="errorMessage">Can&#39;t be blank</p> : null }
         </div>
         <div className="cvc inputWrapper">
                 <label htmlFor="">CVC</label>
                 <InputMask className="InputMaskCvc" mask="999" maskChar={null} type="text" placeholder="e.g. 123" 
-                {...register ("cvc" , { required: "Cant be blank" , minLength : {
+                {...register ("cvc" , { required: "Can't be blank" , minLength : {
                     value: 3 ,
                     message: "wrong format"
                 }} )}/>
-                {errors.cvc && <p>{errors.cvc.message}</p>}
+                {errors.cvc && <p className="errorMessage">{errors.cvc.message}</p>}
             </div>
       </div>
-      <button>Confirm</button>
+      <StyledButton>Confirm</StyledButton>
     </StyledForm>
   );
 }
@@ -69,18 +70,19 @@ const StyledForm = styled.form`
   align-items: center;
   gap: 26px;
   margin-top: 90px;
-
+  
   .inputWrapper {
     display: flex;
     flex-direction: column;
     gap: 9px;
+    position: relative;
   }
-  .inputWrapper p {
+  /* .inputWrapper p {
     font-weight: 500;
 font-size: 12px;
 line-height: 15px;
 color: #FF5050;
-  }
+  } */
   label {
 font-weight: 600;
 font-size: 12px;
@@ -137,15 +139,14 @@ font-weight: 500;
     width: 164px;
     height: 45px;
 }
-button {
-    width: 327px;
-    height: 53px;
-    background: #21092F;
-border-radius: 8px;
-border: none;
-font-weight: 500;
-font-size: 18px;
-line-height: 23px;
-color: #FFFFFF;
-}
+ .errorMessage {
+  font-weight: 500;
+font-size: 12px;
+line-height: 15px;
+color: #FF5050;
+  position: absolute;
+  bottom: -18px;
+ }
 `;
+
+

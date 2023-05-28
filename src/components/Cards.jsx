@@ -14,7 +14,9 @@ export default function Card(props) {
         <p className="cardNumber">{props.cardNumber}</p>
         <div className="owner">
           <p className="cardHolderName">{props.cardHolderName}</p>
-          <p>{props.month}/</p>
+          <p className="data">
+            {props.month}/{props.year}
+          </p>
         </div>
       </div>
     </StyledContainer>
@@ -89,12 +91,30 @@ const StyledContainer = styled.div`
     color: #ffffff;
     margin: 37px 0 17px 0;
   }
+  .owner {
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 19px;
+  }
   .cardHolderName {
     font-weight: 500;
     font-size: 9px;
     line-height: 11px;
+    max-width: 200px;
+    overflow: hidden;
     letter-spacing: 1.28571px;
     text-transform: uppercase;
+    color: #ffffff;
+  }
+  .data {
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: 1.28571px;
     color: #ffffff;
   }
 `;
