@@ -125,13 +125,13 @@ const StyledContainer = styled.div`
     .cardBack {
       width: 447px;
       height: 245px;
-      top: 590px;
+      top: 550px;
       right: -222px;
     }
     .cardFront {
       width: 447px;
       height: 245px;
-      top: 300px;
+      top: 260px;
       left: 164px;
       padding: 28px 0 0 32px;
     }
