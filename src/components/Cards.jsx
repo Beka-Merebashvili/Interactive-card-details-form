@@ -16,7 +16,7 @@ export default function Card(props) {
         <div className="owner">
           <p className="cardHolderName">{props.cardHolderName}</p>
           <p className="data">
-            {props.month}/{props.year}
+            {props.month}{props.year && "/"}{props.year}
           </p>
         </div>
       </div>

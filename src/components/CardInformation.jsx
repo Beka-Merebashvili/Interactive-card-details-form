@@ -78,8 +78,9 @@ export default function CardInformation(props) {
               placeholder="MM"
               {...register("month", {
                 required: "Can't be blank",
-                maxLength: {
+                minLength: {
                   value: 2,
+                  message: "wrong format",
                 },
               })}
             />
@@ -91,8 +92,9 @@ export default function CardInformation(props) {
               placeholder="YY"
               {...register("year", {
                 required: "Can't be blank",
-                maxLength: {
+                minLength: {
                   value: 2,
+                  message: "wrong format",
                 },
               })}
             />
@@ -208,6 +210,7 @@ const StyledForm = styled.form`
     margin: 0;
     .input {
       width: 380px;
+      outline: #21092f;
     }
     .date input {
       width: 80px;

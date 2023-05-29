@@ -2,13 +2,15 @@ import { styled } from "styled-components";
 import StyledButton from "../styled-components/StyledButton";
 import complateIcon from "../assets/images/icon-complete.svg";
 
-export default function Complate() {
+export default function Complate(props) {
   return (
     <StyledDiv>
       <img src={complateIcon} alt="" />
       <h2>THANK YOU!</h2>
       <p>We&#39;ve added your card details</p>
-      <StyledButton>Continue</StyledButton>
+      <StyledButton onClick={() => {
+        props.setConfirm(false)
+      }}>Continue</StyledButton>
     </StyledDiv>
   );
 }
