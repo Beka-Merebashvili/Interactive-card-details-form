@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components"
 import GlobalStayles from "./styled-components/GlobalStyles";
 import Card from "./components/Cards";
 import CardInformation from "./components/CardInformation";
@@ -12,7 +13,7 @@ function App() {
   const [year, setYear] = useState("");
   const [cvc, setCvc] = useState("");
   return (
-    <>
+    <StyledBody>
       <GlobalStayles />
       <Card cardNumber={cardNumber} cvc={cvc} cardHolderName={cardHolderName} month={month} year={year} />
       {confirm ? (
@@ -27,8 +28,17 @@ function App() {
           setCvc={setCvc}
         />
       )}
-    </>
+    </StyledBody>
   );
 }
 
 export default App;
+
+const StyledBody = styled.div`
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media only screen and (min-width: 1440px) {
+      flex-direction: row;
+}
+`

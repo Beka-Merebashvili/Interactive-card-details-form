@@ -10,12 +10,8 @@ const GlobalStayles = createGlobalStyle`
 }
 body {
     background-color : #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-`
 
-
+`;
 
 export default GlobalStayles;

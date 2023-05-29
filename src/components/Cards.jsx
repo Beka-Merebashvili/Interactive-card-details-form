@@ -4,8 +4,9 @@ import cardFontImg from "../assets/images/bg-card-front.png";
 export default function Card(props) {
   return (
     <StyledContainer>
-      <p className="cvcNumber">{props.cvc}</p>
-      <div className="cardBack"></div>
+      <div className="cardBack">
+        <p className="cvcNumber">{props.cvc}</p>
+      </div>
       <div className="cardFront">
         <div className="circles">
           <div className="bigCircle"></div>
@@ -36,8 +37,8 @@ const StyledContainer = styled.div`
     text-align: right;
     letter-spacing: 1.28px;
     position: absolute;
-    top: 104px;
-    right: 52px;
+    top: 73px;
+    right: 34px;
     z-index: 2;
   }
   .cardBack {
@@ -89,7 +90,7 @@ const StyledContainer = styled.div`
     line-height: 23px;
     letter-spacing: 2.2px;
     color: #ffffff;
-    margin: 37px 0 17px 0;
+    margin-top: 37px;
   }
   .owner {
     width: 240px;
@@ -116,5 +117,68 @@ const StyledContainer = styled.div`
     line-height: 11px;
     letter-spacing: 1.28571px;
     color: #ffffff;
+  }
+  @media only screen and (min-width: 1440px) {
+    width: 483px;
+    height: 100vh;
+    margin-right: 350px;
+    .cardBack {
+      width: 447px;
+      height: 245px;
+      top: 590px;
+      right: -222px;
+    }
+    .cardFront {
+      width: 447px;
+      height: 245px;
+      top: 300px;
+      left: 164px;
+      padding: 28px 0 0 32px;
+    }
+    .circles {
+      gap: 15px;
+    }
+    .bigCircle {
+      width: 47px;
+      height: 47px;
+    }
+    .smallCircle {
+      width: 21px;
+      height: 21px;
+    }
+    .cardNumber {
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 3.42px;
+      margin-top: 64px;
+    }
+    .owner {
+      width: 350px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      bottom: 26px;
+      left: 32px;
+    }
+    .cardHolderName {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+      max-width: 290px;
+      overflow: hidden;
+    }
+    .data {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+    }
+    .cvcNumber {
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+      top: 111px;
+      right: 62px;
+    }
   }
 `;

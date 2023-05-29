@@ -2,7 +2,6 @@ import { styled } from "styled-components";
 import StyledButton from "../styled-components/StyledButton";
 import complateIcon from "../assets/images/icon-complete.svg";
 
-
 export default function Complate() {
   return (
     <StyledDiv>
@@ -34,5 +33,8 @@ const StyledDiv = styled.div`
     line-height: 23px;
     color: #8f8694;
     margin: 16px 0 48px 0;
+  }
+  @media only screen and (min-width: 1440px) {
+    margin: 0;
   }
 `;

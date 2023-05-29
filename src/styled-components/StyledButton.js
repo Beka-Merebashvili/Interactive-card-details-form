@@ -10,5 +10,8 @@ font-weight: 500;
 font-size: 18px;
 line-height: 23px;
 color: #FFFFFF;
+@media only screen and (min-width: 1440px) {
+    width: 380px;
+}
 `
 export default StyledButton;
